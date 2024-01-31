@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="income.css" />
+</head>
+
+<body>
+    <header>
+        <img id="btn" src="../list of icons/moon.png" width="50px">
+        <a href="../budget/index.html">BUDGET</a><br>
+        <a href="../income_statements/income.html">INCOME STATEMENT</a>
+    </header>
+    <h1>STATEMENT OF OPERATIONS</h1>
+    <div id="div"></div>
+    <form id="addForm">
+        <table>
+            <thead>
+                <th class="heads">USAGE</th>
+                <th class="heads"> AMOUNT</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Sales</th>
+                    <td> <input type="number" class="input" id="sales" name="sales">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Net sales</th>
+                    <td><input type="number" class="input" id="net_sales"></td>
+                </tr>
+                <tr>
+                    <th>Costs of goods sold</th>
+                    <td><input type="number" class="input" id="cost_of_goods"></td>
+                </tr>
+                <tr>
+                    <th>Gross Profit</th>
+                    <td><input type="number" class="input"></td>
+                </tr>
+                <tr>
+                    <th>Operating Expenses</th>
+                    <td><input type="number" class="input"></td>
+                </tr>
+                <tr>
+                    <th>Net Income from Operations</th>
+                    <td><input type="number" class="input"></td>
+                </tr>
+                <tr>
+                    <th>Other Income</th>
+                    <td><input type="number" class="input"></td>
+                </tr>
+                <tr>
+                    <th>Other Expenses</th>
+                    <td><input type="number" class="input"></td>
+                </tr>
+                <tr>
+                    <th>Earning before Income tax</th>
+                    <td><input type="number" class="input"></td>
+                </tr>
+                <tr>
+                    <th>Income Tax</th>
+                    <td><input type="number" class="input"></td>
+                </tr>
+                <tr>
+                    <th>Net profit/Net Income</th>
+                    <td><input type="number" class="input"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit" name="btn" onclick="submit1()">SUBMIT</button>
+    </form>
+    <script src="income.js"></script>
+    <span id="response"></span>
+    <footer>
+        <a href="bugiriwilson651@gmail.com">bugiriwilson651@gmail.com</a>
+        <a href="../home/home.html">HOME</a>
+        <a href="">About us</a>
+        <a href="">Contact Us</a>
+    </footer>
+</body>
+
+</html>

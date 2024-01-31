@@ -1,0 +1,69 @@
+#title {
+    text-align: center;
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+    margin: 50px;
+}
+
+#science {
+    font-size: 30px;
+    border-radius: 30px;
+    border: 2px black solid;
+    color: var(--third-color);
+    background-color: var(--secondary-color);
+    padding: 10px;
+}
+
+body {  
+    padding: 50px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+
+}
+
+#math {
+    font-size: 30px;
+    border-radius: 30px;
+    border: 2px black solid;
+    color: var(--third-color);
+    background-color: var(--secondary-color);
+    padding: 10px;
+
+}
+
+section {
+    margin: 40px;
+}
+
+
+
+:root {
+    --primary-color: white;
+    --secondary-color: black;
+    --third-color: yellow;
+}
+
+.dark-theme {
+    --primary-color: black;
+    --secondary-color: white;
+    --third-color: red;
+}
+
+p {
+    color: var(--secondary-color);
+}
+
+
+
+a{
+    text-decoration: none;
+}
+#science:hover{
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+}
+#math:hover{
+    background-color: var(--third-color);
+    color:var(--secondary-color) ;
+}
