@@ -11,9 +11,9 @@ $(document).ready(() => {
         let password = $("#password");
         $.ajax({
             type: "post",
-            url: "/save",
+            url: "sign.php",
             data: {
-                password: password,
+                email: email,
                 username: username,
                 password: password
             },
@@ -25,6 +25,7 @@ $(document).ready(() => {
             },
             error:function(error){
                 window.location="INDEX.html";
+                console.log("what b this");
             }
         })
 

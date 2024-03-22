@@ -1,36 +1,42 @@
 input {
     border-radius: 10px;
-    padding: 3%;
+    padding: 1.2%;
     margin: 1%;
     font-size: large;
-    width: 70%;
+    width: 80%;
 }
-h1{
-    color: green;
+
+h1 {
+    color: rgb(2, 219, 2);
 }
+
 button {
-    border: 2px transparent solid;
+    border: 1px transparent solid;
     border-radius: 15px;
-    padding: 4px;
+    padding: 0.6%;
     font-size: large;
     color: white;
     background-color: rgb(38, 201, 40);
     margin-top: 2%;
+    width: 50%;
 }
 
 button:hover {
-    box-shadow: 0px 4px 5px rgb(108, 110, 111);
+    box-shadow: 0px 4px 5px rgb(185, 187, 188);
 }
 
 form {
     border-radius: 20px;
     border: 1px white solid;
     background-color: white;
-    padding: 10%;
-    margin: 20%;
-box-shadow: 0px 2px 10px grey;
+    padding: 5%;
+    margin: 3% 25%;
+    box-shadow: 0px 2px 10px grey;
 }
 
 body {
     background-color: aliceblue;
+}
+::placeholder{
+    color: black;
 }
