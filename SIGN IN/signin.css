@@ -1,5 +1,6 @@
 input {
-    border-radius: 10px;
+    border-radius: 8px;
+    border-width: 1px;
     padding: 1.2%;
     margin: 1%;
     font-size: large;
@@ -8,10 +9,21 @@ input {
 
 h1 {
     color: rgb(2, 219, 2);
+    margin-left: 20%;
+}
+
+input,
+label {
+    display: block;
+}
+
+label {
+    margin-left: 2%;
+    font-size: large;
 }
 
 button {
-    border: 1px transparent solid;
+    border-color: rgb(38, 201, 40);
     border-radius: 15px;
     padding: 0.6%;
     font-size: large;
@@ -37,6 +49,4 @@ form {
 body {
     background-color: aliceblue;
 }
-::placeholder{
-    color: black;
-}
+
