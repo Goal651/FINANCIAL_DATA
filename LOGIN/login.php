@@ -1,6 +1,5 @@
 <?php
 $server = 'localhost';
-// $servername = '127.0.0.1';
 $username = 'root';
 $password = '';
 $db = 'financial_data';

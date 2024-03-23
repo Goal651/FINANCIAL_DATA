@@ -36,14 +36,26 @@ app.get('/save', function (req, res) {
     res.sendFile(indexPath);
 });
 
-app.post('/save', (req, res) => {
+app.post('/sign', (req, res) => {
     const { username, email, password } = req.body;
     const sql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
     connection.query(sql, [username, email, password], (err, result) => {
         if (err) {
-            res.status(404).json({ error: err.message });
+            res.status(500).json({ error: err.message });
         } else {
-            res.status(200).json({ message: 'Student added successfully' });
+            res.status(201).json({ message: 'Student added successfully' });
+        }
+    });
+});
+
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    const sql = 'SELECT password FROM users where email=`?` ';
+    connection.query(sql, [email], (err, result) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+        } else {
+            res.status(201).json({ message: 'Student added successfully' });
         }
     });
 });

@@ -10,10 +10,6 @@ function addStudent() {
     let email = $('#email').val();
     let password = $('#password').val();
     $.ajax({
-        type: "get",
-        url: "/save"
-    });
-    $.ajax({
         type: "post",
         url: "https://goal651.github.io/FINANCIAL_DATA/save",
         dataType: "json",
