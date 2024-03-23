@@ -23,7 +23,7 @@ function addStudent() {
             }
             console.log("Allowed");
         }, error: function(){
-            console.error("What???");
+            alert("What???");
         }
     })
 
