@@ -2,7 +2,7 @@ body {
     background-color: aliceblue;
 }
 
-#head {
+#head{
     margin: 10px;
     font-size: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -15,7 +15,7 @@ form{
     border: 1px white solid;
     padding: 5%;
     border-radius: 30px;
-    margin: 30px;
+    margin:10% 25%;
     box-shadow: 0px 2px 10px gray;
 }
 
@@ -26,6 +26,9 @@ input {
     border-radius: 10px;
     font-size: large;
     color: blue;
+    margin-bottom: 1%;
+    width: 80%;
+    height: 28px;
 }
 
 button {
@@ -35,7 +38,7 @@ button {
     font-size: 20px;
     border-radius: 30px;
     border-color: transparent;
-    margin-left: 50px;
+    margin-left: 5%;
     width: 50%;
 }
 
@@ -46,6 +49,7 @@ button:hover {
 
 .div {
     font-size: 20px;
+    
 }
 
 a {
