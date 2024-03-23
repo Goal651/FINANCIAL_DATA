@@ -4,7 +4,7 @@ body {
 
 h1 {
     margin: 1%;
-    font-size: x-large;
+    font-size: 200%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: blue;
     text-align: center;
@@ -54,7 +54,7 @@ button:hover {
 }
 
 .forgot {
-    font-size: 400%;
+    font-size: x-large;
     color: rgb(207, 12, 12);
     margin-left: 5%;
 
