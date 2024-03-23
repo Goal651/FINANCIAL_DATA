@@ -1,8 +1,5 @@
 $(document).ready(() => {
-    $.ajax({
-        type: "get",
-        url: "/save"
-    });
+  
     $('form').on('submit', (e) => {
         e.preventDefault();
         add();
@@ -13,6 +10,10 @@ $(document).ready(() => {
         let username = $("#username").val();
         let email = $("#password").val();
         let password = $("#password");
+        $.ajax({
+            type: "get",
+            url: "/save"
+        });
         $.ajax({
             type: "post",
             url: "sign.php",
