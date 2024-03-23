@@ -12,6 +12,7 @@ function add() {
     let password = $('#password').val();
 
     var user1 = [
+        username,
         email,
         password
     ]

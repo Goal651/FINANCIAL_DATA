@@ -35,10 +35,10 @@ con.connect((error) => {
     console.log("Connected to the database!");
 
     //Save data
-    app.post('/get_data', (req, res) => {
+    app.post('/sign', (req, res) => {
         var response_object = req.body;
         var user = response_object['user'];
-        var sql = "INSERT INTO users (email, password) VALUES (?, ?)";
+        var sql = "INSERT INTO users (username,email, password) VALUES (?, ?,?)";
         con.query(sql, user, (error, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
