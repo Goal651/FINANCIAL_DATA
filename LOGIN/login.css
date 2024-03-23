@@ -25,16 +25,16 @@ label {
     color: blue;
 }
 
-input,input:focus {
+input {
     margin-left: 5%;
     padding: 3%;
     border: 1px solid blue;
     border-radius: 10px;
-    font-size: large;
+    font-size: medium;
     color: blue;
     margin-bottom: 1%;
     width: 80%;
-    height: 15px;
+    height: 14px;
 }
 
 button {
