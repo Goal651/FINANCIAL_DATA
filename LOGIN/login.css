@@ -10,7 +10,7 @@ body {
     text-align: center;
 }
 
-.form {
+form{
     background-color: white;
     border: 1px white solid;
     padding: 5%;
@@ -20,12 +20,12 @@ body {
 }
 
 input {
-    margin: 5px;
-    padding: 10px;
-    border: 2px solid rebeccapurple;
+    margin-left: 5%;
+    padding: 2%;
+    border: 1px solid black;
     border-radius: 10px;
     font-size: large;
-    color: rebeccapurple;
+    color: blue;
 }
 
 button {
@@ -36,11 +36,12 @@ button {
     border-radius: 30px;
     border-color: transparent;
     margin-left: 50px;
+    width: 50%;
 }
 
 button:hover {
-    background-color: white;
-    color: blue;
+    background-color: rgb(0, 115, 255);
+    color: white;
 }
 
 .div {
