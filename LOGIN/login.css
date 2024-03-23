@@ -25,7 +25,7 @@ label {
     color: blue;
 }
 
-input,input:focus {
+input {
     margin-left: 5%;
     padding: 6%;
     border: 1px solid blue;
