@@ -35,7 +35,7 @@ con.connect((error) => {
     console.log("Connected to the database!");
 
     //Save data
-    app.post('/sign', (req, res) => {
+    app.post('http://localhost:4000/sign', (req, res) => {
         var response_object = req.body;
         var user = response_object['user'];
         var sql = "INSERT INTO users (username,email, password) VALUES (?, ?,?)";
