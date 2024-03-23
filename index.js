@@ -4,62 +4,76 @@ const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
-
 let app = express();
-app.use(cors());
-app.use(express.static(path.join(__dirname, 'FINANCIAL_DATA')));
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
 
-// Connect to database
-let connection = mysql.createConnection({
+var con = mysql.createConnection({
     host: process.env.HOST,
-    user: process.env.USER,
+    user: process.env.user,
     password: process.env.PASS,
     database: process.env.DB
 });
 
-connection.connect((err) => {
-    if (err) {
-        console.error('Error connecting to MySQL database: ' + err.stack);
-        return;
-    } else {
-        console.log('Connected to MySQL database as id ' + connection.threadId);
-    }
-});
-
-// Use of middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Respond to user
-app.get('/save', function (req, res) {
+
+
+app.get('/', (req, res) => {
     const indexPath = path.join(__dirname, 'index.html');
-    // Send the HTML file as a response
     res.sendFile(indexPath);
-});
+})
 
-app.post('/sign', (req, res) => {
-    const { username, email, password } = req.body;
-    const sql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
-    connection.query(sql, [username, email, password], (err, result) => {
-        if (err) {
-            res.status(500).json({ error: err.message });
-        } else {
-            res.status(201).json({ message: 'Student added successfully' });
-        }
+
+con.connect((error) => {
+    if (error) throw error;
+    console.log("Connected to the database!");
+
+    //Save data
+    app.post('/get_data', (req, res) => {
+        var response_object = req.body;
+        var user = response_object['user'];
+        var sql = "INSERT INTO users (email, password) VALUES (?, ?)";
+        con.query(sql, user, (error, result) => {
+            if (err) {
+                res.status(500).json({ error: err.message });
+            } else {
+                res.status(201).json({ message: 'Student added successfully' });
+            }
+            console.log('Number of records inserted: ' + result.affectedRows);
+            res.send('Form submitted successfully');
+        });
+    });
+
+    //Get all data
+    app.get('/get_data', (req, res) => {
+        let sql = "SELECT * FROM users";
+        con.query(sql, (error, result) => {
+            if (error) throw error;
+            res.semd(result);
+        })
+    });
+
+    app.post('/login', (req, res) => {
+        const { email, password } = req.body;
+        const sql = 'SELECT password FROM users where email=email ';
+        connection.query(sql, (err, result) => {
+            if (err) {
+                res.status(500).json({ error: err.message });
+            } else {
+                res.status(201).json({ message: 'Student added successfully' });
+            }
+        });
     });
 });
 
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    const sql = 'SELECT password FROM users where email=`?` ';
-    connection.query(sql, [email], (err, result) => {
-        if (err) {
-            res.status(500).json({ error: err.message });
-        } else {
-            res.status(201).json({ message: 'Student added successfully' });
-        }
-    });
-});
 
-const server = app.listen(process.env.PORT, () => {
-    console.log(`Server running on http://${process.env.HOST}:${process.env.PORT}`);
-});
+app.listen(process.env.PORT, () => {
+    console.log(`server is running on port ${process.env.PORT}`);
+})
+
