@@ -19,7 +19,7 @@ function add() {
     console.log(user1);
     $.ajax({
         type: "POST",
-        url: "http://localhost:6510/sign",
+        url: "/sign",
         data: {
             user: user1
         },
