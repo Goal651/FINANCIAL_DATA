@@ -38,7 +38,7 @@ con.connect((error) => {
     app.post('http://localhost:6510/sign', (req, res) => {
         var response_object = req.body;
         var user = response_object['user'];
-        var sql = "INSERT INTO users (username,email, password) VALUES (?, ?,?)";
+        var sql = "INSERT INTO users (username,email, password) VALUES (?, ?, ?)";
         con.query(sql, user, (error, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
