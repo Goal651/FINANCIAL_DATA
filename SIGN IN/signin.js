@@ -18,12 +18,20 @@ function add() {
     console.log(user1);
     $.ajax({
         type: "POST",
-        url: "http://localhost:4000/get_data",
+        url: "http://localhost:4000/sign",
         data: {
             user: user1
         },
         success: () => {
             console.log('user posted OK.');
+            const $message = $('<p id="message">Incorrect Email!</p>').hide();
+            $('.message').append($message);
+
+            $message.slideDown(500, function () {
+                $(this).delay(2000).slideUp(500, function () {
+                    $(this).remove();
+                });
+            });
         },
         error: (error) => {
             console.log('failed to post user: ', error)

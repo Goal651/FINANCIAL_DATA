@@ -51,7 +51,7 @@ con.connect((error) => {
     });
 
     //Get all data
-    app.get('/get_data', (req, res) => {
+    app.get('/sign', (req, res) => {
         let sql = "SELECT * FROM users";
         con.query(sql, (error, result) => {
             if (error) throw error;
