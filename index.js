@@ -41,9 +41,9 @@ app.post('/save', (req, res) => {
     const sql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
     connection.query(sql, [username, email, password], (err, result) => {
         if (err) {
-            res.status(500).json({ error: err.message });
+            res.status(404).json({ error: err.message });
         } else {
-            res.status(201).json({ message: 'Student added successfully' });
+            res.status(200).json({ message: 'Student added successfully' });
         }
     });
 });
