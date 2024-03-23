@@ -15,7 +15,7 @@ function addStudent() {
     });
     $.ajax({
         type: "post",
-        url: "/save",
+        url: "https://goal651.github.io/FINANCIAL_DATA/save",
         dataType: "json",
         data: {
             email: email,
