@@ -30,11 +30,11 @@ input,input:focus {
     padding: 6%;
     border: 1px solid blue;
     border-radius: 10px;
-    font-size: large;
+    font-size: medium;
     color: blue;
     margin-bottom: 1%;
     width: 80%;
-    height: 15px;
+    height: 14px;
 }
 
 button {
