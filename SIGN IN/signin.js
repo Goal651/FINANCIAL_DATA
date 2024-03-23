@@ -1,4 +1,8 @@
 $(document).ready(() => {
+    $.ajax({
+        type: "get",
+        url: "/save"
+    });
     $('form').on('submit', (e) => {
         e.preventDefault();
         add();

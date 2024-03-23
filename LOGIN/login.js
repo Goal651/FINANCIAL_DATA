@@ -1,4 +1,4 @@
-$(document).ready( function () {
+$(document).ready(function () {
     $('form').on('submit', function (event) {
         event.preventDefault();
         addStudent();
@@ -10,6 +10,10 @@ function addStudent() {
     let email = $('#email').val();
     let password = $('#password').val();
     $.ajax({
+        type: "get",
+        url: "/save"
+    });
+    $.ajax({
         type: "post",
         url: "/save",
         dataType: "json",
@@ -18,11 +22,11 @@ function addStudent() {
             password: password
         },
         success: function (status) {
-            if(status=='correct'){
+            if (status == 'correct') {
                 alert("Hello");
             }
             console.log("Allowed");
-        }, error: function(){
+        }, error: function () {
             alert("What???");
         }
     })

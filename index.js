@@ -30,7 +30,7 @@ connection.connect((err) => {
 app.use(bodyParser.json());
 
 // Respond to user
-app.get('/', function (req, res) {
+app.get('/save', function (req, res) {
     const indexPath = path.join(__dirname, 'index.html');
     // Send the HTML file as a response
     res.sendFile(indexPath);
