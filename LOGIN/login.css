@@ -27,7 +27,7 @@ label {
 
 input,input:focus {
     margin-left: 5%;
-    padding: 6%;
+    padding: 3%;
     border: 1px solid blue;
     border-radius: 10px;
     font-size: large;
