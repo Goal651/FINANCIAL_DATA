@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  
+
     $('form').on('submit', (e) => {
         e.preventDefault();
         add();
@@ -11,12 +11,8 @@ $(document).ready(() => {
         let email = $("#password").val();
         let password = $("#password");
         $.ajax({
-            type: "get",
-            url: "/save"
-        });
-        $.ajax({
             type: "post",
-            url: "sign.php",
+            url: "/sign",
             data: {
                 email: email,
                 username: username,
@@ -25,11 +21,11 @@ $(document).ready(() => {
             dataType: "json",
 
             success: function (status) {
-                window.location = "/HOME/home.html";
+                window.location = "https://goal651.github.io/FINANCIAL_DATA//HOME/home.html";
 
             },
-            error:function(error){
-                window.location="INDEX.html";
+            error: function (error) {
+                window.location = "https://goal651.github.io/FINANCIAL_DATA/index.html";
                 console.log("what b this");
             }
         })
